@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+     <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+          <span class="material-icons-outlined">email</span>
+          <span class="material-icons-outlined">account_circle</span>
+        </div>
+      </header>
+      <!-- End Header -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">inventory</span> THD Praxis
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">dashboard</span><a href="index.html">Dashboard</a>
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">perm_identity</span><a href="patients.html"> Patients</a>
+          </li>
+        </ul>  
+     </aside>
+     <main class="main-container">
+        <div class="main-title">
+          <p class="font-weight-bold">Corenette Winkler Health Record</p>
+        </div>
+        <div class="charts">
+
+            <div class="charts-card">
+              <p class="chart-title">Corenette Status</p>
+              <div id="patient1-chart"></div>
+            </div>
+  
+            
+        </div>
+        <div class="report">
+            <h2>PERSONAL DATA</h2>
+            <p><strong>Name :</strong> Corenette Winkler</p>
+            <p><strong>Age :</strong> 40</p>
+            <p><strong>Admit date :</strong> 12.12.2022</p>
+            <h2>DIAGNOSES</h2>
+            <p><strong>1.</strong> Borderline Personality Disorder</p>
+            <p><strong>2.</strong> Post traumatic stress Disorder</p>
+            <p><strong>3.</strong> ADHD</p>
+        </div>
+         <img class="img-responsive" src="data:image/png;base64,{{ graphic|safe }}">
+        
+     </main>
+        <!-- End Main -->
+  
+     </div>
+      <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>  
+        
+    </body>
